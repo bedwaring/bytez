@@ -1,0 +1,32 @@
+[package]
+name = "bytez"
+version = "0.1.0"
+edition = "2021"
+authors = ["Spangled"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+goblin = "0.8.0"
+
+[profile.release]
+opt-level = 3
+strip = "debuginfo"
+codegen-units = 16
+debug = false
+overflow-checks = true
+lto = false
+panic = 'unwind'
+debug-assertions = false
+incremental = false
+
+[profile.dev]
+opt-level = 3
+strip = "debuginfo"
+codegen-units = 16
+debug = false
+overflow-checks = true
+lto = false
+panic = 'unwind'
+debug-assertions = false
+incremental = true
