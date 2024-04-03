@@ -1,0 +1,37 @@
+[package]
+name = "bytez"
+version = "0.1.1"
+edition = "2021"
+authors = ["Spangled"]
+readme = "README.md"
+description = "Bytez analyzes binary files to determine their format, architecture, and programming language."
+homepage = "https://github.com/bedwaring/bytez"
+repository = "https://github.com/bedwaring/bytez"
+keywords = ["cli", "bytes"]
+license = "MIT"
+categories = ["command-line-utilities"]
+
+[dependencies]
+goblin = "0.8.0"
+
+[profile.release]
+opt-level = 3
+strip = "debuginfo"
+codegen-units = 16
+debug = false
+overflow-checks = true
+lto = false
+panic = 'unwind'
+debug-assertions = false
+incremental = false
+
+[profile.dev]
+opt-level = 3
+strip = "debuginfo"
+codegen-units = 16
+debug = false
+overflow-checks = true
+lto = false
+panic = 'unwind'
+debug-assertions = false
+incremental = true
